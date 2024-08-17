@@ -4,34 +4,31 @@ const taskSchema = new mongoose.Schema({
     taskName: {
         type: String,
         unique: true,
-        required: [true, 'Task name is required'],
-        trim: true, // Removes surrounding whitespace
+        required: true,
+        trim: true, 
     },
     description: {
         type: String,
-        required: [true, 'Task description is required'],
+        required: true,
         trim: true,
     },
     status: {
         type: String,
-
-
-        enum: ['IN_PROGRESS', 'To_Do',"REVIEW", 'DONE'], // Only allow these values
-        default: 'pending', // Set default status
+       
         required: true,
     },
     assignee: {
-        type: String, // Consider ObjectId if referencing a User model
+        type: String,
         required: [true, 'Assignee is required'],
     },
     dueDate: {
-        type: Date, // Use Date type for better date handling
+        type: Date,
         required: [true, 'Due date is required'],
     },
 }, {
-    timestamps: true // Automatically manage createdAt and updatedAt fields
+    timestamps: true 
 });
 
-const Task = mongoose.model('Task', taskSchema);
+const taskModel = mongoose.model('Task', taskSchema);
 
-module.exports = Task;
+module.exports = taskModel;

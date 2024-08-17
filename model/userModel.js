@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        // Only required for manual signups
+        
     },
     firstName: {
         type: String,
