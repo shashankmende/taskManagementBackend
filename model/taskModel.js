@@ -16,7 +16,7 @@ const taskSchema = new mongoose.Schema({
         type: String,
 
 
-        enum: ['In_Progress', 'To_Do',"Review", 'Done'], // Only allow these values
+        enum: ['IN_PROGRESS', 'To_Do',"REVIEW", 'DONE'], // Only allow these values
         default: 'pending', // Set default status
         required: true,
     },
